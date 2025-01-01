@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 24 100% 50%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 24 100% 50%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 24 100% 50%;
+    --radius: 0.5rem;
+  }
+ 
+  body {
+    @apply bg-[#FF7F00] text-black min-h-screen w-full overflow-x-hidden;
+    font-family: 'Cairo', sans-serif;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 640px) {
+    html {
+      font-size: 14px;
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 1024px) {
+    html {
+      font-size: 15px;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    html {
+      font-size: 16px;
+    }
+  }
+  
+  .section-fade {
+    @apply opacity-0 transition-opacity duration-500;
+  }
+
+  .section-fade.visible {
+    @apply opacity-100;
+  }
+
+  @keyframes typing {
+    0% { opacity: .2; }
+    20% { opacity: 1; }
+    100% { opacity: .2; }
+  }
+
+  .typing-animation span {
+    animation: typing 1.4s infinite both;
+  }
+
+  .typing-animation span:nth-child(2) {
+    animation-delay: .2s;
+  }
+
+  .typing-animation span:nth-child(3) {
+    animation-delay: .4s;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .chat-message {
+    animation: slideIn 0.3s ease-out forwards;
+  }
+
+  .rsc-os-option-element {
+    @apply flex items-center gap-2 rounded-xl bg-gradient-to-r from-white to-gray-50 text-gray-800 shadow-md hover:shadow-lg transition-all duration-300 !important;
+  }
+
+  .rsc-os-option-element:hover {
+    @apply transform -translate-y-0.5 !important;
+  }
+
+  .rsc-os-option-element svg {
+    @apply text-[#FF7F00] !important;
+  }
+
+  .file-upload-button {
+    @apply relative inline-flex items-center px-4 py-2 bg-[#FF7F00] text-white rounded-full hover:bg-[#FF7F00]/90 transition-colors duration-300;
+  }
+
+  .file-upload-button input[type="file"] {
+    @apply absolute inset-0 w-full h-full opacity-0 cursor-pointer;
+  }
+}
+
+/* Additional Responsive Utilities */
+.responsive-container {
+  @apply container mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.responsive-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4;
+}
+
+.responsive-flex {
+  @apply flex flex-col sm:flex-row items-center justify-between;
+}
+
+.responsive-text {
+  @apply text-base sm:text-lg lg:text-xl;
+}
+
+.responsive-padding {
+  @apply p-4 sm:p-6 lg:p-8;
+}
+
+.responsive-margin {
+  @apply m-4 sm:m-6 lg:m-8;
+}
